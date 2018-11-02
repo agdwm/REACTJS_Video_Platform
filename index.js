@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import Media from './src/playlist/components/media';
 
 const app = document.getElementById('app');
-//const holaMundo = <h1>Hola estudiante!</h1>;
 
 // ReactDOM.render(qué, dónde)
-render(<Media />, app);
+render(<Media image="./images/covers/bitcoin.jpg" title="¿Qué es Responsive Design?" author="Almudena Guerras" />, app);
