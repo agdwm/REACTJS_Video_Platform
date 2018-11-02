@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import './media.css';
 
 class Media extends Component {
-	
 	render() {
 		return (
 			<div className="Media">
@@ -14,6 +14,14 @@ class Media extends Component {
 			</div>
 		)
 	}
+}
+
+Media.propTypes = {
+	// boolean, number, object, func, array, symbol...
+	image: PropTypes.string,
+	title: PropTypes.string.isRequired,
+	author: PropTypes.string,
+	type: PropTypes.oneOf(['video', 'audio']),
 }
 
 export default Media;
