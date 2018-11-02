@@ -3,15 +3,24 @@ import PropTypes from 'prop-types';
 import './media.css';
 
 class Media extends Component {
-
+	
 	// constructor(props) {
 	// 	super(props);
-	// 	this.handleClick = this.handleClick.bind(this);
+	// 	this.state = {
+	// 		author: props.author,
+	// 	}
+	// 	// this.handleClick = this.handleClick.bind(this); //-> Se puede sustitir por una Arrow function
 	// }
+
+	state = {
+		author: this.props.author //Declarar el estado de un componente en ES7. Sin usar 'constructor'
+	}
 
 	handleClick = (e) => {
 		e.preventDefault();
-		console.log(this.props.title);
+		this.setState({
+			author: 'Ricardo Celis'
+		})
 	}
 
 	render() {
@@ -21,7 +30,7 @@ class Media extends Component {
 					<img className="Media-image" src={this.props.image} alt="" width="260" height="160"/>
 				</div>
 				<h3 className="Media-title">{this.props.title}</h3>
-				<p className="Media-author">{this.props.author}</p>
+				<p className="Media-author">{this.state.author}</p>
 			</div>
 		)
 	}
