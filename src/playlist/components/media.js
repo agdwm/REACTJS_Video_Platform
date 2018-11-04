@@ -13,24 +13,32 @@ class Media extends Component {
 	// }
 
 	state = {
-		author: this.props.author //Declarar el estado de un componente en ES7. Sin usar 'constructor'
+		author: this.props.author //init state in ES7
 	}
 
 	handleClick = (e) => {
 		e.preventDefault();
 		this.setState({
-			author: 'Ricardo Celis'
+			//author: 'Ricardo Celis'
 		})
+	}
+
+	componentWillMount() {
+		if (this.props.author === '') {
+			this.setState({
+				author: 'Anonymous author'
+			})
+		}
 	}
 
 	render() {
 		return (
 			<div className="Media" onClick={this.handleClick}>
 				<div className="Media-cover">
-					<img className="Media-image" src={this.props.image} alt="" width="260" height="160"/>
+					<img className="Media-image" src={this.props.cover} alt="" width="240" height="160"/>
 				</div>
 				<h3 className="Media-title">{this.props.title}</h3>
-				<p className="Media-author">{this.state.author}</p>
+				<p className="Media-author">{this.props.author}</p>
 			</div>
 		)
 	}
@@ -38,7 +46,7 @@ class Media extends Component {
 
 Media.propTypes = {
 	// boolean, number, object, func, array, symbol...
-	image: PropTypes.string,
+	cover: PropTypes.string,
 	title: PropTypes.string.isRequired,
 	author: PropTypes.string,
 	type: PropTypes.oneOf(['video', 'audio']),
