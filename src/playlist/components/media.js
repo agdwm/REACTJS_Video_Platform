@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './media.css';
 
-class Media extends Component {
+class Media extends PureComponent {
 	
 	// constructor(props) {
 	// 	super(props);
@@ -13,7 +13,7 @@ class Media extends Component {
 	// }
 
 	state = {
-		author: this.props.author //init state in ES7
+		author: this.props.author //this.state in ES7
 	}
 
 	handleClick = (e) => {
