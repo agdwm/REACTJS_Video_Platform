@@ -3,9 +3,9 @@ import Playlist from '../../playlist/components/playlist';
 
 function Category(props) {
 	return (
-		<div>
-			<p>{props.description}</p>
-			<h2>{props.title}</h2>
+		<div className="Category">
+			<p className="Category-description">{props.description}</p>
+			<h2 className="Category-title">{props.title}</h2>
 			<Playlist playlist={props.playlist} />
 		</div>
 	)
