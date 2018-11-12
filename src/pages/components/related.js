@@ -9,4 +9,5 @@ function Related(props) {
 		</div>
 	)
 }
+
 export default Related;
