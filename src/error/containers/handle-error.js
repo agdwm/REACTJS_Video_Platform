@@ -1,9 +1,9 @@
+import * as Sentry from '@sentry/browser';
 import React, { Component } from 'react';
 import RegularError from '../components/regular-error';
-import * as Sentry from '@sentry/browser';
 
 Sentry.init({
-	dsn: process.env.SENTRY_DSN
+	//dsn: process.env.REACT_APP_SENTRY
 });
 
 class HandleError extends Component {
