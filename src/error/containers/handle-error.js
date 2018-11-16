@@ -2,8 +2,11 @@ import * as Sentry from '@sentry/browser';
 import React, { Component } from 'react';
 import RegularError from '../components/regular-error';
 
+const DSN = process.env.REACT_APP_SENTRY
+
 Sentry.init({
-	//dsn: process.env.REACT_APP_SENTRY
+	dsn: DSN
+	//dsn: 'https://756a3ed9966c44f6a927e5d2fdc875bf@sentry.io/1322286'
 });
 
 class HandleError extends Component {
@@ -29,6 +32,7 @@ class HandleError extends Component {
 	render() {
 		if (this.state.handleError) {
 			return (
+
 				<RegularError/>
 			)
 		}
