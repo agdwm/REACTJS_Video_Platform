@@ -8,11 +8,19 @@ import './search.css';
 // }
 
 const Search = (props) => (
-	<form className="Search">
-		<input 
+	<form 
+		className="Search"
+		onSubmit={props.handleSubmit}
+	>
+		<input
+			ref={props.setRef} //ref: store in react this html tag (input)
 			type="text"
 			placeholder="Busca tu video favorito"
 			className="Search-input"
+			name="search"
+			//defaultValue='Luis Fonsi'
+			value={props.value}
+			onChange={props.handleChange}
 		/>
 	</form>
 )
