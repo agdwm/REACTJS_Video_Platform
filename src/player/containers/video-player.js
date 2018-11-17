@@ -28,6 +28,7 @@ class VideoPlayer extends Component {
 				/>
 				<Video
 					autoplay={false}
+					pause={this.state.pause}
 					src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
 				/>
 			</VideoPlayerLayout>
