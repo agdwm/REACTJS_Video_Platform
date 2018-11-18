@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import './video.css';
 
 class Video extends Component {
+	
 	togglePlay() {
 		//'play' and 'pause' are native methods of the browser for the video tag
 		if (this.props.pause) {
@@ -33,7 +34,7 @@ class Video extends Component {
 		return (
 			<div className="Video">
 				<video
-					muted="muted"
+					//muted="muted"
 					autoPlay={autoplay}
 					src={src}
 					ref={this.setRef}

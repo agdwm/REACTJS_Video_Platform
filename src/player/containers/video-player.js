@@ -8,6 +8,7 @@ import Timer from '../components/timer';
 import Controls from '../components/video-player-controls';
 import ProgressBar from '../components/progress-bar';
 import Spinner from '../components/spinner';
+import Volume from '../components/volume';
 
 class VideoPlayer extends Component {
 
@@ -53,6 +54,10 @@ class VideoPlayer extends Component {
 			loading: false
 		})
 	}
+	handleVolumeChange = e => {
+		//volume: property from html5 Media API
+		this.video.volume = e.target.value
+	}
 
 	render() {
 		return (
@@ -73,6 +78,9 @@ class VideoPlayer extends Component {
 						duration={this.state.duration}
 						value={this.state.currentTime}
 						handleProgressChange={this.handleProgressChange}
+					/>
+					<Volume 
+						handleVolumeChange={this.handleVolumeChange}
 					/>
 				</Controls>
 				<Spinner 
