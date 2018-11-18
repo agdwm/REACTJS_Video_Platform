@@ -4,6 +4,7 @@ import Title from '../components/title';
 import Video from '../components/video';
 import PlayPause from '../components/play-pause';
 import Timer from '../components/timer';
+import Controls from '../components/video-player-controls';
 
 class VideoPlayer extends Component {
 
@@ -34,13 +35,15 @@ class VideoPlayer extends Component {
 				<Title
 					title="Esto es un video"
 				/>
-				<PlayPause 
-					pause={this.state.pause}
-					handleClick={this.togglePlay}
-				/>
-				<Timer 
-					duration={this.state.duration}
-				/>
+				<Controls>
+					<PlayPause 
+						pause={this.state.pause}
+						handleClick={this.togglePlay}
+					/>
+					<Timer 
+						duration={this.state.duration}
+					/>
+				</Controls>
 				<Video
 					autoplay={this.props.autoplay}
 					pause={this.state.pause}
