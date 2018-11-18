@@ -92,6 +92,7 @@ class VideoPlayer extends Component {
 						handleProgressChange={this.handleProgressChange}
 					/>
 					<Volume 
+						muted={this.state.muted}
 						handleVolumeChange={this.handleVolumeChange}
 						handleVolumeClick={this.handleVolumeClick}
 					/>
