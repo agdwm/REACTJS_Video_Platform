@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {formattedTime} from '../../utils/utils';
 import VideoPlayerLayout from '../components/video-player-layout';
 import Title from '../components/title';
 import Video from '../components/video';
@@ -10,7 +11,8 @@ class VideoPlayer extends Component {
 
 	state = {
 		pause: true,
-		duration: 0
+		duration: 0,
+		currentTime: 0
 	}
 	togglePlay = e => {
 		this.setState({
@@ -23,9 +25,16 @@ class VideoPlayer extends Component {
 		})
 	}
 	handleLoadedMetadata = e => {
+		//duration: property from html5 Media API
 		this.video = e.target;
 		this.setState({
 			duration: this.video.duration
+		})
+	}
+	handleTimeUpdate = e => {
+		//currentTime: property from html5 Media API
+		this.setState({
+			currentTime: this.video.currentTime
 		})
 	}
 
@@ -41,13 +50,15 @@ class VideoPlayer extends Component {
 						handleClick={this.togglePlay}
 					/>
 					<Timer 
-						duration={this.state.duration}
+						duration={formattedTime(this.state.duration)}
+						currentTime={formattedTime(this.state.currentTime)}
 					/>
 				</Controls>
 				<Video
 					autoplay={this.props.autoplay}
 					pause={this.state.pause}
 					handleLoadedMetadata={this.handleLoadedMetadata}
+					handleTimeUpdate={this.handleTimeUpdate}
 					src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
 				/>
 			</VideoPlayerLayout>
