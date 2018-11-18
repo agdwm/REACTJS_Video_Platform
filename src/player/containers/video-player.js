@@ -17,6 +17,7 @@ class VideoPlayer extends Component {
 		muted: true,
 		duration: 0,
 		currentTime: 0,
+		currentVolume: 0,
 		loading: false
 	}
 	togglePlay = e => {
@@ -66,9 +67,24 @@ class VideoPlayer extends Component {
 	handleVolumeChange = e => {
 		//volume: property from html5 Media API
 		this.video.volume = e.target.value
+		let mutedVal;
+		this.video.volume === 0 ? mutedVal = true : mutedVal = false
+		
+		this.setState({
+			muted: mutedVal,
+			currentVolume: this.video.volume
+		})
 	}
 	handleVolumeClick = e => {
 		this.toggleMuted();
+		const initStep = 0.05;
+		
+		if (this.state.muted && this.state.currentVolume === 0) {
+			this.setState({
+				currentVolume: initStep
+			})
+			this.video.volume = initStep
+		}
 	}
 
 	render() {
@@ -93,6 +109,7 @@ class VideoPlayer extends Component {
 					/>
 					<Volume 
 						muted={this.state.muted}
+						value={this.state.currentVolume}
 						handleVolumeChange={this.handleVolumeChange}
 						handleVolumeClick={this.handleVolumeClick}
 					/>

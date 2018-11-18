@@ -10,22 +10,23 @@ const Volume = (props) => {
 		value, 
 		handleVolumeChange
 	} = props;
-
-	console.log('MUTED', muted);
+	console.log('VALUE', value);
 	return (
-		<button className="Volume" onClick={handleVolumeClick}>
-			{
-				muted ? 
-					<VolumeMuted
-						color="white"
-						size={25}
-					/>
-				: 
-					<VolumeIcon
-						color="white"
-						size={25}
-					/>
-			}
+		<button className="Volume">
+			<div onClick={handleVolumeClick}>
+				{
+					muted ? 
+						<VolumeMuted
+							color="white"
+							size={25}
+						/>
+					: 
+						<VolumeIcon
+							color="white"
+							size={25}
+						/>
+				}
+			</div>
 			<div className="Volume-range">
 				<input
 					type="range"
