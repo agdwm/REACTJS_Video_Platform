@@ -10,7 +10,7 @@ const Volume = (props) => {
 		value, 
 		handleVolumeChange
 	} = props;
-	console.log('VALUE', value);
+
 	return (
 		<button className="Volume">
 			<div onClick={handleVolumeClick}>

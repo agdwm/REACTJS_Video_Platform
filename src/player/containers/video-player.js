@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {formattedTime} from '../../utils/utils';
+import {formattedTime, checkIsFullscreen, launchFullscreen, exitFullscreen} from '../../utils/utils';
 import VideoPlayerLayout from '../components/video-player-layout';
 import Title from '../components/title';
 import Video from '../components/video';
@@ -9,6 +9,7 @@ import Controls from '../components/video-player-controls';
 import ProgressBar from '../components/progress-bar';
 import Spinner from '../components/spinner';
 import Volume from '../components/volume';
+import FullScreen from '../components/full-screen';
 
 class VideoPlayer extends Component {
 
@@ -78,7 +79,7 @@ class VideoPlayer extends Component {
 	handleVolumeClick = e => {
 		this.toggleMuted();
 		const initStep = 0.05;
-		
+
 		if (this.state.muted && this.state.currentVolume === 0) {
 			this.setState({
 				currentVolume: initStep
@@ -86,10 +87,18 @@ class VideoPlayer extends Component {
 			this.video.volume = initStep
 		}
 	}
+	handleToggleFullScreen = e => {
+		!checkIsFullscreen() ? launchFullscreen(this.player) : exitFullscreen();
+	}
+	setRef = el => {
+		this.player = el;
+	}
 
 	render() {
 		return (
-			<VideoPlayerLayout>
+			<VideoPlayerLayout
+				setRef={this.setRef}
+			>
 				<Title
 					title="Esto es un video"
 				/>
@@ -112,6 +121,9 @@ class VideoPlayer extends Component {
 						value={this.state.currentVolume}
 						handleVolumeChange={this.handleVolumeChange}
 						handleVolumeClick={this.handleVolumeClick}
+					/>
+					<FullScreen 
+						handleToggleFullScreen={this.handleToggleFullScreen}
 					/>
 				</Controls>
 				<Spinner 

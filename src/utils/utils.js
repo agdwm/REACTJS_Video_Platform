@@ -8,3 +8,36 @@ export const formattedTime = (secs) => {
 	const seconds = parseInt(secs%60, 10);
 	return `${minutes} : ${leftPad(seconds.toString())}`
 }
+
+export const checkIsFullscreen = () => {
+	if (document.fullscreen || document.mozFullScreen || document.webkitIsFullScreen) {
+		return true
+	}
+}
+
+export const launchFullscreen = (el) => {
+	
+	const target = el || document;
+
+	if(target.requestFullscreen) {
+		target.requestFullscreen();
+	} else if(target.mozRequestFullScreen) {
+		target.mozRequestFullScreen();
+	} else if(target.webkitRequestFullscreen) {
+		target.webkitRequestFullscreen();
+	} else if(target.msRequestFullscreen) {
+		target.msRequestFullscreen();
+	}
+}
+
+export const exitFullscreen = () => {
+	if(document.exitFullscreen) {
+		document.exitFullscreen();
+	} else if(document.mozCancelFullScreen) {
+		document.mozCancelFullScreen();
+	} else if(document.webkitExitFullscreen) {
+		document.webkitExitFullscreen();
+	} else if(document.msExitFullscreen) {
+		document.msExitFullscreen();
+	}
+}
