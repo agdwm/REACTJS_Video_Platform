@@ -5,8 +5,8 @@ import './volume.css';
 const Volume = (props) => {
 
 	return (
-		<button className="Volume">
-			<VolumeIcon 
+		<button className="Volume" onClick={props.handleVolumeClick}>
+			<VolumeIcon
 				color="white"
 				size={25}
 			/>

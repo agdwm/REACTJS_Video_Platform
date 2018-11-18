@@ -14,6 +14,7 @@ class VideoPlayer extends Component {
 
 	state = {
 		pause: true,
+		muted: true,
 		duration: 0,
 		currentTime: 0,
 		loading: false
@@ -33,6 +34,14 @@ class VideoPlayer extends Component {
 		this.video = e.target;
 		this.setState({
 			duration: this.video.duration
+		})
+	}
+	isMuted = (e) => {
+		return this.state.muted
+	}
+	toggleMuted = e => {
+		this.setState({
+			muted: !this.state.muted
 		})
 	}
 	handleTimeUpdate = e => {
@@ -58,6 +67,9 @@ class VideoPlayer extends Component {
 		//volume: property from html5 Media API
 		this.video.volume = e.target.value
 	}
+	handleVolumeClick = e => {
+		this.toggleMuted();
+	}
 
 	render() {
 		return (
@@ -81,12 +93,14 @@ class VideoPlayer extends Component {
 					/>
 					<Volume 
 						handleVolumeChange={this.handleVolumeChange}
+						handleVolumeClick={this.handleVolumeClick}
 					/>
 				</Controls>
 				<Spinner 
 					active={this.state.loading}
 				/>
 				<Video
+					muted={this.state.muted}
 					autoplay={this.props.autoplay}
 					pause={this.state.pause}
 					handleLoadedMetadata={this.handleLoadedMetadata}

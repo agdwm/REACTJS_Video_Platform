@@ -23,6 +23,7 @@ class Video extends Component {
 
 	render() {
 		const {
+			muted, 
 			autoplay, 
 			src,
 			handleLoadedMetadata,
@@ -34,7 +35,7 @@ class Video extends Component {
 		return (
 			<div className="Video">
 				<video
-					//muted="muted"
+					muted={muted}
 					autoPlay={autoplay}
 					src={src}
 					ref={this.setRef}
