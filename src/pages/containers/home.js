@@ -12,7 +12,7 @@ class Home extends Component {
 	state = {
 		modalVisible: false,
 	}
-
+	//receive the Media props
 	handleOpenModal = (media) => {
 		this.setState({
 			modalVisible: true,
@@ -33,8 +33,8 @@ class Home extends Component {
 				<HomeLayout>
 					<Related />
 					<Categories
-					categories={this.props.data.categories}
-					handleOpenModal={this.handleOpenModal}
+						categories={this.props.data.categories}
+						handleOpenModal={this.handleOpenModal}
 					/>
 					{
 						this.state.modalVisible &&

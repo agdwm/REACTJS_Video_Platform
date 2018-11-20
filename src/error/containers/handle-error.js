@@ -6,7 +6,6 @@ const DSN = process.env.REACT_APP_SENTRY
 
 Sentry.init({
 	dsn: DSN
-	//dsn: 'https://756a3ed9966c44f6a927e5d2fdc875bf@sentry.io/1322286'
 });
 
 class HandleError extends Component {

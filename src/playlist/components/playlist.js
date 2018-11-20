@@ -7,7 +7,16 @@ function Playlist(props) {
 		<div className="Playlist">
 			{
 				props.playlist.map((item) => {
-					return <Media key={item.id} {...item} handleClick={props.handleOpenModal}/>
+					// item = {
+					// 	"title": "¿Qué es responsive Design?",
+					// 	"author": "LeonidasEsteban",
+					// 	"type": "video",
+					// 	"cover": "./images/covers/responsive.jpg",
+					// 	"src": "http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4",
+					// 	"id": 1
+					// },
+					return <Media key={item.id} {...item} openModal={props.handleOpenModal}
+							/>
 				})
 			}
 		</div>
