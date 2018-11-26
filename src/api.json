@@ -141,6 +141,76 @@
 			}
 			]
 		}
-	]
+	],
+	"myPlaylist": {
+		"title": "My Playlist",
+		"list":	[
+			{
+				"id": 1,
+				"title": "5 reasons to choose a notebook over a computer desktop"
+			},
+			{
+				"id": 2,
+				"title": "Get around easily with a new york limousine service"
+			},
+			{
+				"id": 3,
+				"title": "How to cook a tender juicy steak"
+			},
+			{
+				"id": 4,
+				"title": "How to remove kidney stones"
+			},
+			{
+				"id": 5,
+				"title": "The science of superstitions"
+			},
+			{
+				"id": 6,
+				"title": "Tendencias de Javascript para el 2019"
+			},
+			{
+				"id": 7,
+				"title": "La ruta de aprendizaje de un desarrollador web"
+			},
+			{
+				"id": 8,
+				"title": "Cómo crear tu primera app | Platzi Live"
+			},
+			{
+				"id": 9,
+				"title": "Qué es la Economía Naranja"
+			},
+			{
+				"id": 10,
+				"title": "Tendencias de marketing digital y escucha activa en redes sociales"
+			}
+		]
+	},
+	"friendsPlaylist": {
+		"title": "Playlists de Amigos",
+		"list": [
+			{	
+				"id": 1,
+				"src": "./images/profile/profile_gordon_caroll.jpg",
+				"name": "Gordon Carrol"
+			},
+			{
+				"id": 2,
+				"src": "./images/profile/profile_adeline_wilkins.jpg",
+				"name": "Adeline Wilkins"
+			},
+			{
+				"id": 3,
+				"src": "./images/profile/profile_john_wheeler.jpg",
+				"name": "John Wheeler"
+			},
+			{
+				"id": 4,
+				"src": "./images/profile/profile_katherine_nelson.jpg",
+				"name": "Katherine Nelson"
+			}
+		]
+	}	
 }
   
