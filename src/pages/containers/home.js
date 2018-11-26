@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import HomeLayout from '../components/home-layout';
-import Related from '../components/related.js';
+import Related from '../../related/components/related';
 import Categories from '../../categories/components/categories';
 import ModalContainer from '../../widgets/containers/modal';
 import Modal from '../../widgets/components/modal';
@@ -31,7 +31,10 @@ class Home extends Component {
 		return (
 			<HandleError>
 				<HomeLayout>
-					<Related />
+					<Related
+						myPlaylist={this.props.data.myPlaylist}
+						friendsPlaylist={this.props.data.friendsPlaylist}
+						/>
 					<Categories
 						categories={this.props.data.categories}
 						handleOpenModal={this.handleOpenModal}
