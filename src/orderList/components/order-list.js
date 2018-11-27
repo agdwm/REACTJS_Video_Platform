@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ListItem from './list-item';
+import ListItem from '../../listItem/components/list-item';
 import './list-item.css';
-import './order-list.css';
 
 const OrderList = (props) => {
 	
-	console.log('PROPS', props.myPlaylist);
 	// const numbers = props.numbers;
 	// const listItems = numbers.map((number) => 
 	// 	<ListItem key={number.toString()} value={number}/>

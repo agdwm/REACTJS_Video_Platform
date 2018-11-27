@@ -1,7 +1,7 @@
 .Related {
 	width: 300px;
 	padding-left: 15px;
-	padding-right: 15px;
+	padding-right: 20px;
 	color: #CFCFCF;
 }
 
@@ -9,4 +9,43 @@
 	color: #FFFFFF;
 	padding-top: 30px;
 	font-size: 16px;
+}
+
+.Related ol {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+.Related ol li {
+	counter-increment: customlistcounter;
+	position: relative;
+}
+
+.Related ol li:before {
+	content: counter(customlistcounter) " ";
+	position: absolute;
+	left: -30px;
+}
+
+.Related ol:first-child {
+	counter-reset: customlistcounter;
+}
+
+.Related ul {
+	list-style-type: none;
+	padding-left: 10px;
+}
+
+.Related ul li {
+	display: flex;
+	align-items: center;
+	padding-bottom: 15px;
+}
+
+.Related ul img {
+	border-radius: 50%;
+	overflow: hidden;
+	height: 40px;
+	width: 40px;
+	margin-right: 15px;
 }
