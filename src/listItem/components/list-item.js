@@ -1,9 +1,10 @@
 import React from 'react';
+import './list-item.css';
 
 const ListItem = (props) => {
 	return (
 		<li className="ListItem">
-			<a href="#">{props.title}</a>
+			{props.children}
 		</li>
 	)
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../../logo/components/logo';
-import OrderList from '../../orderList/components/order-list';
-import PictureList from '../../pictureList/components/picture-list';
+import OrderList from '../../lists/components/order-list';
+import PictureList from '../../lists/components/picture-list';
 import './related.css';
 
 function Related(props) {

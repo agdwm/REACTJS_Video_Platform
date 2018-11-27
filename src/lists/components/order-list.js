@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ListItem from '../../listItem/components/list-item';
-import './list-item.css';
 
 const OrderList = (props) => {
 	
@@ -14,10 +13,9 @@ const OrderList = (props) => {
 			{
 				props.myPlaylist.list.map((item) => {
 					return (
-						<ListItem 	
-							key={item.id}
-							title={item.title}
-						/>
+						<ListItem key={item.id}	>
+							{item.title}
+						</ListItem>
 					)
 				})
 			}

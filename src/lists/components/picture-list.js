@@ -8,10 +8,10 @@ const PictureList = (props) => {
 			{
 				props.friendsPlaylist.list.map((item) => {
 					return (
-						<li	key={item.id}>
+						<ListItem key={item.id}>
 							<img src={item.src} alt={`Profile image of ${item.name}`}/>
-							<p>{item.name}</p>
-						</li>
+							{item.name}
+						</ListItem>
 					)
 				})
 			}
