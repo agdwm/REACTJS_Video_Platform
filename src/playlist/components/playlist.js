@@ -1,6 +1,6 @@
 import React from 'react';
+import Media from '../../media/components/media';
 import './playlist.css';
-import Media from './media.js';
 
 function Playlist(props) {
 	return (

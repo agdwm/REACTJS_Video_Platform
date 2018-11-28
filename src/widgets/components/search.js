@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './search.css';
 
 // function Search(props) {
@@ -24,5 +25,13 @@ const Search = (props) => (
 		/>
 	</form>
 )
+
+
+Search.PropTypes = {
+	handleSubmit: PropTypes.func,
+	setRef: PropTypes.func,
+	value: PropTypes.string,
+	handleChange: PropTypes.func 
+}
 
 export default Search;
