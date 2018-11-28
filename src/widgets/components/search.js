@@ -27,7 +27,7 @@ const Search = (props) => (
 )
 
 
-Search.PropTypes = {
+Search.propTypes = {
 	handleSubmit: PropTypes.func,
 	setRef: PropTypes.func,
 	value: PropTypes.string,

@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 import ListItem from '../../listItem/components/list-item';
 
 const OrderList = (props) => {
-	
-	// const numbers = props.numbers;
-	// const listItems = numbers.map((number) => 
-	// 	<ListItem key={number.toString()} value={number}/>
-	// );
 	return (
 		<ol>
 			{

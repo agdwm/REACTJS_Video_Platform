@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './video-player-controls.css';
 
 const VideoPlayerControls = (props) => {
@@ -7,6 +8,10 @@ const VideoPlayerControls = (props) => {
 			{props.children}
 		</div>
 	)
+}
+
+VideoPlayerControls.propTypes = {
+	children: PropTypes.node
 }
 
 export default VideoPlayerControls;

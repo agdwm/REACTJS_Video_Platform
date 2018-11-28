@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './video-player-layout.css';
 
 const VideoPlayerLayout = (props) => {
@@ -10,6 +11,11 @@ const VideoPlayerLayout = (props) => {
 			{props.children}
 		</div>
 	)
+}
+
+VideoPlayerLayout.propTypes = {
+	setRef: PropTypes.func,
+	children: PropTypes.node
 }
 
 export default VideoPlayerLayout;

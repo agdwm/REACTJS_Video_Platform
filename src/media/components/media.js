@@ -43,7 +43,7 @@ class Media extends PureComponent {
 }
 
 Media.propTypes = {
-	// boolean, number, object, func, array, symbol...
+	// bool, number, object, func, array, symbol...
 	cover: PropTypes.string,
 	title: PropTypes.string.isRequired,
 	author: PropTypes.string,

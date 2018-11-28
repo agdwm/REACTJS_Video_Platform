@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import VolumeIcon from '../../icons/components/volume';
 import VolumeMuted from '../../icons/components/volume-muted';
 import './volume.css';
@@ -39,6 +40,13 @@ const Volume = (props) => {
 			</div>
 		</button>
 	)
+}
+
+Volume.propTypes = {
+	muted: PropTypes.bool,
+	handleVolumeClick: PropTypes.func,
+	value:  PropTypes.number,
+	handleVolumeChange:  PropTypes.func,
 }
 
 export default Volume

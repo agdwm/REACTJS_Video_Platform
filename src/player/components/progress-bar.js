@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './progress-bar.css';
 
 const ProgressBar = (props) => {
+
 	return (
 		<div className="ProgressBar">
 			<input 
@@ -13,6 +15,12 @@ const ProgressBar = (props) => {
 			/>
 		</div>
 	)
+}
+
+ProgressBar.propTypes = {
+	duration: PropTypes.number,
+	value: PropTypes.number,
+	handleProgressChange: PropTypes.func,
 }
 
 export default ProgressBar;

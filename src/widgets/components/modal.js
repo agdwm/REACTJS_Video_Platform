@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './modal.css';
 
 function Modal(props) {
@@ -11,6 +12,11 @@ function Modal(props) {
 			/>
 		</div>
 	)
+}
+
+Modal.propTypes = {
+	children: PropTypes.node,
+	handleClick: PropTypes.func,
 }
 
 export default Modal;

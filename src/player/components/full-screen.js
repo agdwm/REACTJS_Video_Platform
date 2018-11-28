@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import FullScreenIcon from '../../icons/components/full-screen';
 import './full-screen.css';
 
@@ -15,5 +16,10 @@ const FullScreen = (props) => {
 		</div>
 	)
 }
+
+FullScreen.propTypes = {
+	handleToggleFullScreen: PropTypes.func,
+}
+
 
 export default FullScreen;

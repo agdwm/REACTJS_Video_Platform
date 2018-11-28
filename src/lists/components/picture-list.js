@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ListItem from '../../listItem/components/list-item';
 
 const PictureList = (props) => {
@@ -19,5 +20,8 @@ const PictureList = (props) => {
 	)
 }
 
+PictureList.propTypes = {
+	friendsPlaylist: PropTypes.object
+}
 
 export default PictureList;

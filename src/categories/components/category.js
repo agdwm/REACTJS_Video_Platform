@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Playlist from '../../playlist/components/playlist';
 
 function Category(props) {
@@ -12,6 +13,13 @@ function Category(props) {
 			/>
 		</div>
 	)
+}
+
+Category.propTypes = {
+	description: PropTypes.string,
+	title: PropTypes.string,
+	playlist: PropTypes.array.isRequired,
+	handleOpenModal: PropTypes.func.isRequired,
 }
 
 export default Category;

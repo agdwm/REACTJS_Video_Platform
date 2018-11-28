@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Category from './category';
 import './categories.css';
 import Search from '../../widgets/containers/search';
@@ -20,6 +21,10 @@ const Categories = (props) => {
 			}
 		</div>
 	)
+}
+
+Categories.propTypes = {
+	handleOpenModal: PropTypes.func.isRequired,
 }
 
 export default Categories;
